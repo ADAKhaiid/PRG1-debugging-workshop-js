@@ -1,9 +1,13 @@
 function capitalise(word) {
-  word[0] = word[0].toUpperCase();
-  return word;
+  const firstletter = word[0].toUpperCase();
+  const rest = word.slice(1).toLowerCase();
+  const final = firstletter + rest
+
+  return final 
 }
 
 module.exports = { capitalise };
+console.log(capitalise("hello"))
 
 // I recommend you start by calling capitalise with the string "hello"
 

@@ -1,4 +1,4 @@
-function convertTemperature(temperature, toUnit, fromUnit) {
+function convertTemperature(temperature, fromUnit, toUnit) {
   // Check if the units are the same
   if (fromUnit === toUnit) {
     return Number(temperature.toFixed(2));
@@ -8,9 +8,9 @@ function convertTemperature(temperature, toUnit, fromUnit) {
 
   // Convert based on the fromUnit
   if (fromUnit === "C" && toUnit === "F") {
-    result = (temperature * 9) / 5 + 32;
+    result = ((temperature * 1.8) + 32)
   } else if (fromUnit === "F" && toUnit === "C") {
-    result = ((temperature - 32) * 5) / 9;
+    result = ((temperature - 32) / 1.8);
   } else {
     throw new Error("Unsupported unit conversion");
   }
